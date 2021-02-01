@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/styles";
 
-const styles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: "3em",
@@ -63,6 +63,25 @@ const styles = makeStyles((theme) => ({
       backgroundColor: "transparent",
     },
   },
+  drawer: {
+    backgroundColor: theme.palette.common.blue,
+  },
+  drawerItem: {
+    ...theme.typography.tab,
+    color: "white",
+    opacity: 0.7,
+  },
+  drawerItemEstimate: {
+    backgroundColor: theme.palette.common.orange,
+  },
+  drawerItemSelected: {
+    "& .MuiListItemText-root": {
+      opacity: 1,
+    },
+  },
+  appbar: {
+    zIndex: theme.zIndex.modal + 1,
+  },
 }));
 
-export default styles;
+export default useStyles;
