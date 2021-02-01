@@ -4,9 +4,21 @@ const styles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: "3em",
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "2em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "1.25em",
+    },
   },
   logo: {
     height: "8em",
+    [theme.breakpoints.down("md")]: {
+      height: "7em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "5.5em",
+    },
   },
   logoContainer: {
     padding: 0,
@@ -39,6 +51,16 @@ const styles = makeStyles((theme) => ({
     opacity: 0.7,
     "&:hover": {
       opacity: 1,
+    },
+  },
+  drawerIcon: {
+    height: "40px",
+    width: "40px",
+  },
+  drawerIconContainer: {
+    marginLeft: "auto",
+    "&:hover": {
+      backgroundColor: "transparent",
     },
   },
 }));
