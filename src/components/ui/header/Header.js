@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import ToolBar from "@material-ui/core/Toolbar";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import {
+  MenuItem,
+  IconButton,
+  SwipeableDrawer,
+  Tabs,
+  Tab,
+  Button,
+  Menu,
+  AppBar,
+  Toolbar,
+  useMediaQuery,
+  useScrollTrigger,
+} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import { IconButton } from "@material-ui/core";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 
@@ -92,13 +94,13 @@ export default function Header(props) {
       case "/mobileapps":
         if (value !== 1) {
           setValue(1);
-          setSelectedIndex(1);
+          setSelectedIndex(2);
         }
         break;
       case "/websites":
         if (value !== 1) {
           setValue(1);
-          setSelectedIndex(2);
+          setSelectedIndex(3);
         }
         break;
       case "/revolution":
@@ -220,7 +222,7 @@ export default function Header(props) {
     <React.Fragment>
       <ElevationScroll>
         <AppBar>
-          <ToolBar disableGutters>
+          <Toolbar disableGutters>
             <Button
               component={Link}
               to="/"
@@ -231,7 +233,7 @@ export default function Header(props) {
               <img src={logo} alt="company logo" className={classes.logo} />
             </Button>
             {matches ? drawer : tabs}
-          </ToolBar>
+          </Toolbar>
         </AppBar>
       </ElevationScroll>
       <div className={classes.toolbarMargin}></div>
