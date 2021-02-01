@@ -20,7 +20,7 @@ import { useTheme } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 
 import logo from "../../../assets/logo.svg";
-import useStyles from "./stylesOptions";
+import useStyles from "./headerStyles";
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -36,7 +36,7 @@ function ElevationScroll(props) {
 
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-export default function Header(props) {
+export function Header(props) {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
