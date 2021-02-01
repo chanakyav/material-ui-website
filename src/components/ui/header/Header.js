@@ -7,10 +7,10 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import { makeStyles } from "@material-ui/styles";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/logo.svg";
+import logo from "../../../assets/logo.svg";
+import styles from "./stylesOptions";
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -24,48 +24,7 @@ function ElevationScroll(props) {
   });
 }
 
-const useStyles = makeStyles((theme) => ({
-  toolbarMargin: {
-    ...theme.mixins.toolbar,
-    marginBottom: "3em",
-  },
-  logo: {
-    height: "8em",
-  },
-  logoContainer: {
-    padding: 0,
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-  },
-  tabContainer: {
-    marginLeft: "auto",
-  },
-  tab: {
-    ...theme.typography.tab,
-    minWidth: 10,
-    marginLeft: "25px",
-  },
-  button: {
-    ...theme.typography.estimate,
-    borderRadius: "50px",
-    marginLeft: "50px",
-    marginRight: "25px",
-    height: "45px",
-  },
-  menu: {
-    backgroundColor: theme.palette.common.blue,
-    color: "white",
-    borderRadius: "0px",
-  },
-  menuItem: {
-    ...theme.typography.tab,
-    opacity: 0.7,
-    "&:hover": {
-      opacity: 1,
-    },
-  },
-}));
+const useStyles = styles;
 
 export default function Header(props) {
   const classes = useStyles();

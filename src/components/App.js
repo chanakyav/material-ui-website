@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/styles";
-import Header from "../components/ui/Header";
+import Header from "./ui/header/Header";
 import theme from "./ui/Theme";
 
 function App() {
