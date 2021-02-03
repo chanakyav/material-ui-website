@@ -37,15 +37,14 @@ function ElevationScroll(props) {
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 export function Header(props) {
+  const { value, setValue, selectedIndex, setSelectedIndex } = props;
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
 
-  const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -104,8 +103,8 @@ export function Header(props) {
         mouseOver: (event) => handleClick(event),
       },
       { name: "The Revolution", link: "/revolution", activeIndex: 2 },
-      { name: "About Us", link: "/aboutus", activeIndex: 3 },
-      { name: "Contact Us", link: "/contactus", activeIndex: 4 },
+      { name: "About Us", link: "/about", activeIndex: 3 },
+      { name: "Contact Us", link: "/contact", activeIndex: 4 },
     ],
     [anchorEl]
   );
@@ -125,7 +124,7 @@ export function Header(props) {
           break;
       }
     });
-  }, [value, menuOptions, selectedIndex, routes]);
+  }, [value, setValue, menuOptions, selectedIndex, setSelectedIndex, routes]);
 
   const tabs = (
     <React.Fragment>
